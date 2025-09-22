@@ -3,6 +3,21 @@
 A sleek, minimal chat app for practical career guidance. Built with **Next.js 14**, **tRPC**, **Drizzle ORM (Postgres)**, **NextAuth (Credentials)**, and **Tailwind**. Global dark mode, elegant cards/inputs, Markdown replies, and fast UX.
 
 Made By Vishesh
+
+<img width="1591" height="963" alt="Screenshot 2025-09-22 at 4 35 49 PM" src="https://github.com/user-attachments/assets/56b15484-8408-48a6-b5d8-4603f6672f9f" />
+
+<img width="1578" height="969" alt="Screenshot 2025-09-22 at 4 36 24 PM" src="https://github.com/user-attachments/assets/49d91364-2afe-46b9-a31f-dcf69ec8260b" />
+
+<img width="1578" height="968" alt="Screenshot 2025-09-22 at 4 36 45 PM" src="https://github.com/user-attachments/assets/8a4c0e77-5d2f-4446-a5d4-859d8e7f376a" />
+
+<img width="1576" height="993" alt="Screenshot 2025-09-22 at 4 37 27 PM" src="https://github.com/user-attachments/assets/da47ed40-1897-4f2f-bd51-94c0a45df571" />
+
+<img width="1525" height="997" alt="Screenshot 2025-09-22 at 4 38 50 PM" src="https://github.com/user-attachments/assets/843b023a-7f08-4066-bc82-b0673f93d0d0" />
+
+<img width="1559" height="986" alt="Screenshot 2025-09-22 at 4 39 11 PM" src="https://github.com/user-attachments/assets/88b9c8a2-7278-4310-87a1-121f6f0e0b76" />
+
+<img width="1476" height="979" alt="Screenshot 2025-09-22 at 4 41 40 PM" src="https://github.com/user-attachments/assets/84729803-6b16-4b44-b367-cd15e21d1873" />
+
 ---
 
 ##  Features
