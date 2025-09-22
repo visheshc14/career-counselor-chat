@@ -56,20 +56,19 @@ https://github.com/user-attachments/assets/1fdec2ac-9801-49c5-a021-b6d746a9aa50
 Create `.env.local`:
 
 ```env
-# App
-NEXTAUTH_SECRET=your-long-random-string
-NEXTAUTH_URL=http://localhost:3000
+# Auth / App
+NEXTAUTH_SECRET=replace-me
+NEXTAUTH_URL=http://localhost:3001
 NEXT_PUBLIC_APP_NAME=Career Counselor
-APP_URL=http://localhost:3000
+APP_URL=http://localhost:3001
 
-# Database
-DATABASE_URL=postgres://user:pass@localhost:5432/career_db
+# Database (Neon; keep sslmode=require)
+DATABASE_URL=<your Neon development branch url with sslmode=require>
 
-# LLM (optional but recommended)
-OPENROUTER_API_KEY=...
-# OPENROUTER_MODEL=openai/gpt-oss-120b:free
-# OPENROUTER_ALT_MODELS=deepseek/deepseek-chat,meta-llama/llama-3.1-8b-instruct:free,google/gemma-2-9b-it:free,mistralai/mistral-7b-instruct:free
-# OPENAI_API_KEY=...
+# LLM 
+OPENROUTER_API_KEY=sk-or-...
+OPENROUTER_ALT_MODELS=deepseek/deepseek-chat,meta-llama/llama-3.1-8b-instruct:free
+# OPENAI_API_KEY=sk-...
 # OPENAI_MODEL=gpt-4o-mini
 # OPENAI_PROJECT=...
 ```
