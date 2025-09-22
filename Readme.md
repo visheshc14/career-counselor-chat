@@ -1,6 +1,7 @@
 # Career Counselor
 
 A sleek, minimal chat app for practical career guidance. Built with **Next.js 14**, **tRPC**, **Drizzle ORM (Postgres)**, **NextAuth (Credentials)**, and **Tailwind**. Global dark mode, elegant cards/inputs, Markdown replies, and fast UX.
+Live Vercel Demo Link: https://career-counselor-chat-eight.vercel.app/
 
 Made By Vishesh
 
