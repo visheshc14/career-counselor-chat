@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Theme tokens
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #6b7280;
+  --link: #111111;
+  --card: #ffffff;                 /* solid in light */
+  --border: rgba(17, 24, 39, 0.10);
+  --grid: rgba(17, 24, 39, 0.06);
+}
+
+.dark {
+  --bg: #0b0b0b;
+  --fg: #eeeeee;
+  --muted: #9ca3af;
+  --link: #eeeeee;
+  --card: #111111;                 /* solid in dark (no translucency) */
+  --border: rgba(255, 255, 255, 0.14);
+  --grid: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================
+   Base / Reset
+   ========================= */
+html, body, #__next { height: 100%; }
+
+body {
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter,
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+
+  /* Nothing-style dots everywhere */
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+a { color: var(--link); }
+
+/* Section fade (subtle, non-gloss) */
+.section-muted { background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02)); }
+.dark .section-muted { background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.04)); }
+
+/* Text selection */
+::selection { background: rgba(17,17,17,0.12); }
+.dark ::selection { background: rgba(255,255,255,0.12); }
+
+/* Optional dotted sub-surface */
+.bg-dots {
+  background-image: radial-gradient(var(--grid) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* =========================
+   MATTE (no-gloss) OVERRIDES
+   ========================= */
+
+/* Disable glass: no backdrop blur anywhere */
+.backdrop-blur,
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-lg,
+.backdrop-blur-xl,
+.backdrop-blur-2xl {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* NOTE: We are NOT forcing alpha backgrounds to solid anymore.
+   This keeps your subtle translucency without gloss. */
+
+/* =========================
+   Components
+   ========================= */
+@layer components {
+  .container { @apply max-w-6xl mx-auto px-4; }
+
+  .card {
+    background: var(--card);
+    border-color: var(--border);
+    @apply rounded-2xl border shadow-[0_1px_0_rgba(0,0,0,0.03)];
+  }
+
+  .input {
+    @apply w-full rounded-xl px-3.5 py-2.5 outline-none text-sm transition;
+    @apply border border-black/10 bg-white text-gray-900;
+    @apply focus:ring-2 focus:ring-black/10 focus:border-black/20;
+    @apply placeholder:text-gray-400;
+    @apply dark:bg-zinc-900 dark:text-zinc-50 dark:border-white/15
+           dark:focus:ring-white/10 dark:focus:border-white/20
+           dark:placeholder:text-zinc-400;
+  }
+
+  /* Primary (filled) — black */
+  .button {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium
+           text-white bg-black hover:bg-black/90
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20
+           disabled:opacity-50;
+  }
+
+  /* Flips by theme (matte): light=black, dark=white */
+  .button-contrast {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium
+           focus:outline-none focus-visible:ring-2 disabled:opacity-50;
+    @apply text-white bg-black hover:bg-black/90 focus-visible:ring-black/20;
+  }
+  .button-contrast[aria-busy="true"] { @apply opacity-70; }
+  .dark .button-contrast {
+    @apply text-black bg-white hover:bg-white/90 focus-visible:ring-white/20;
+  }
+
+  /* Outline / ghost */
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium
+           border border-black/10 text-gray-900 bg-white hover:bg-black/[0.03]
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-black/10
+           disabled:opacity-50;
+    @apply dark:border-white/15 dark:text-white dark:bg-transparent dark:hover:bg-white/[0.06]
+           dark:focus-visible:ring-white/10;
+  }
+
+  .badge {
+    border-color: var(--border);
+    @apply inline-flex items-center justify-center text-[11px] px-2.5 py-1 rounded-full border
+           bg-white text-gray-700
+           dark:bg-zinc-900 dark:text-zinc-300;
+  }
+
+  .hero-title { @apply tracking-tight font-extrabold; }
+}
+
+/* =========================
+   Markdown
+   ========================= */
+.prose { @apply max-w-none; }
+.prose :where(p, li) { @apply text-[15px] leading-relaxed; }
+.prose strong { @apply font-semibold; }
+.prose a { @apply underline decoration-dotted; }
+.prose code { @apply px-1 py-0.5 rounded bg-black/10 text-[0.9em] dark:bg-white/10; }
+.prose pre { @apply rounded-xl p-3 bg-black/85 text-white overflow-auto dark:bg-black; }
+.prose pre code { @apply !bg-transparent !p-0; }
+
+/* =========================
+   Thin scrollbars
+   ========================= */
+* { scrollbar-width: thin; scrollbar-color: rgba(156,163,175,0.6) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(156,163,175,0.6);
+  border-radius: 9999px; border: 2px solid transparent; background-clip: padding-box;
+}
+*::-webkit-scrollbar-track { background: transparent; }

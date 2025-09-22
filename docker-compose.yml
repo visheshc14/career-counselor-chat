@@ -1,0 +1,29 @@
+
+services:
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env.docker           # <- Neon lives here
+    
+    command: ["npm", "run", "db:push"]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env.docker          # <- Neon lives here
+    
+    environment:
+      NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-Career Counselor}
+      WATCHPACK_POLLING: "true"
+    ports:
+      - "3001:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
