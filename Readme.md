@@ -1,6 +1,7 @@
 # Career Counselor
 
 A sleek, minimal chat app for practical career guidance. Built with **Next.js 14**, **tRPC**, **Drizzle ORM (Postgres)**, **NextAuth (Credentials)**, and **Tailwind**. Global dark mode, elegant cards/inputs, Markdown replies, and fast UX.
+
 Live Vercel Demo Link: https://career-counselor-chat-eight.vercel.app/
 
 Made By Vishesh
@@ -262,8 +263,12 @@ Set OPENROUTER_API_KEY (and APP_URL, NEXT_PUBLIC_APP_NAME) for free lanes attrib
 
 	• Styles error: Tailwind class typos will fail the build. Check src/styles/globals.css.
 
-	• Banners not showing: Redirects must include ?signout=1 / ?registered=1 / ?expired=1. Chat pages use signOut({ redirect: false }) then window.location.href = "/?signout=1".      
-
+	• Banners not showing: Redirects must include ?signout=1 / ?registered=1 / ?expired=1. Chat pages use signOut({ redirect: false }) then window.location.href = "/?signout=1".
+ 
+#### Notes on Commits
+	
+ 	• This assignment was implemented quickly; commits may be squashed. In a production setting, I’d split commits by feature (scaffolding, schema, API endpoints, UI) for clearer history & review.
+  
 ### Notes
 	• LLM: src/server/routers/chat.ts includes callLLM with OpenRouter primary (rotates on 429) and optional OpenAI fallback.
 
