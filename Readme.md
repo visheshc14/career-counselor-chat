@@ -2,6 +2,7 @@
 
 A sleek, minimal chat app for practical career guidance. Built with **Next.js 14**, **tRPC**, **Drizzle ORM (Postgres)**, **NextAuth (Credentials)**, and **Tailwind**. Global dark mode, elegant cards/inputs, Markdown replies, and fast UX.
 
+Made By Vishesh
 ---
 
 ##  Features
