@@ -4,6 +4,9 @@ A sleek, minimal chat app for practical career guidance. Built with **Next.js 14
 
 Made By Vishesh
 
+This project is a Next.js + TypeScript + tRPC + TanStack Query + Drizzle (Postgres) application built as part of a software engineering assignment. It implements a fully working solution with clear code structure, inline comments, and a live deployment on Vercel. The focus was on delivering a complete, functional product that can be easily cloned, set up, and run. While all code was committed in a single initial push for speed, the repository is structured to highlight modular design, clean separation of concerns, and straightforward deployment. In a production setting, commits would be split by features (e.g., scaffolding, database schema, API endpoints, UI) to provide clearer history and traceability.
+
+
 <img width="1591" height="963" alt="Screenshot 2025-09-22 at 4 35 49 PM" src="https://github.com/user-attachments/assets/56b15484-8408-48a6-b5d8-4603f6672f9f" />
 
 <img width="1578" height="969" alt="Screenshot 2025-09-22 at 4 36 24 PM" src="https://github.com/user-attachments/assets/49d91364-2afe-46b9-a31f-dcf69ec8260b" />
