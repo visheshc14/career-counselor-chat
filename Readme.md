@@ -102,9 +102,11 @@ npm run dev
 
 ### Commands 
 ```bash
-npm run dev     # local dev
-npm run build   # production build
-npm start       # run prod server
+npm run dev        # local dev
+npm run build      # production build
+npm start          # start prod server
+npx drizzle-kit push     # push schema
+npx drizzle-kit studio   # browse DB
 ```
 ### Files you should have
 
